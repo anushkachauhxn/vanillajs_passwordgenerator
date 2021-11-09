@@ -118,3 +118,22 @@ div.charAmt {
 .passwordDisplay:focus {
     outline: none;
 }
+
+/* Small Copy Button at top-right */
+.copyButton {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    /* Border */
+    border: 0.25px solid #7193F3;
+    border-radius: 0 0.25rem;
+    border-bottom: transparent;
+    border-left: transparent;
+    /* Posiion */
+    position: absolute;
+    top: -1px;
+    right: -1px;
+}
+.fa {
+    color: white;
+    cursor: pointer;
+}
