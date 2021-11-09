@@ -62,3 +62,23 @@ div.charAmt {
     padding: 1px 1px 1px 5px;
     background-color: white;
 }
+
+/* Buttons */
+.btn {
+    background-color: transparent;
+    padding: 0.25rem 1rem;
+    border: 1.2px solid #7193F3;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    font-size: medium;
+    cursor: pointer;
+}
+#submit {
+    background-color: #7193F3;
+}
+#reset { 
+    background-color: transparent; 
+}
+#submit:hover, #reset:hover {
+    background-color: white;
+}
