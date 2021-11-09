@@ -82,3 +82,39 @@ div.charAmt {
 #submit:hover, #reset:hover {
     background-color: white;
 }
+
+/* Password Display Panel */
+.password-container {
+    background-color: white;
+    height: 3rem;
+    width: 380px;
+    padding: 0.5rem;
+    margin: 1rem;
+    /* Border */
+    border: 1px solid #7193F3;
+    border-radius: 0.5rem;
+    /* Centering all content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* When the content overflows the box */
+    word-break: break-all;
+    /* For the Copy Button */
+    position: relative;
+}
+.passwordDisplay {
+    background-color: white;
+    width: 360px;
+    height: 3.4rem;
+    outline: none;
+    border: none;
+    resize: none;
+    /* Text Formatting */
+    color: #7193F3;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+}
+.passwordDisplay:focus {
+    outline: none;
+}
