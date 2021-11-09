@@ -34,3 +34,31 @@ body {
     font-weight: 500;
     margin: 0;
 }
+
+/* Form with input fields and buttons */
+.form {
+    /* CSS Grid */
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1rem;
+    column-gap: 3rem;
+    /* Centering all content */
+    justify-content: center;
+    align-items: center;
+}
+label {
+    font-weight: 400;
+}
+div.charAmt {
+    /* aligning range and number to the center */
+    display: flex;
+    align-items: center;
+}
+#charAmtNumber {
+    width: 2rem;
+    outline: none;
+    border: 0.25px solid lightgray;
+    margin: 2px 8px;
+    padding: 1px 1px 1px 5px;
+    background-color: white;
+}
