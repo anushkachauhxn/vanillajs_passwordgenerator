@@ -4,6 +4,7 @@ const charAmtNumber = document.getElementById('charAmtNumber')
 const includeUpperCaseElement = document.getElementById('includeUpperCase')
 const includeNumbersElement = document.getElementById('includeNumbers')
 const includeSymbolsElement = document.getElementById('includeSymbols')
+const passwordDisplayElement = document.getElementById('passwordDisplay')
 const form = document.getElementById('passwordGeneratorForm')
 
 /* Event listener for the form submission */
@@ -37,6 +38,23 @@ function arrayFromLowToHigh(low, high) {
         array.push(i)
     }
     return array
+}
+
+/* Generate Password Function */
+function generatePassword(charAmt, includeUpperCase, includeNumbers, includeSymbols) {
+    /* charCodes is an array containing all 'character codes' we are allowed to use in this password */
+    let charCodes = LOWERCASE_CHAR_CODES
+    if (includeUpperCase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+
+    /* passwordCharacters is an array containing all 'characters' chosen for this password */
+    const passwordCharacters = []
+    for (let i = 0; i < charAmt; i++) {
+        const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+        passwordCharacters.push(String.fromCharCode(characterCode))
+    }
+    return passwordCharacters.join('') /* Essentially turns our array into a string */
 }
 
 /* Syncing range and number inputs together */
