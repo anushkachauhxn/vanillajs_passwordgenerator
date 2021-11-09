@@ -137,3 +137,34 @@ div.charAmt {
     color: white;
     cursor: pointer;
 }
+
+/* Tooltip on hover */
+.tooltipText {
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    width: max-content;
+    padding: 0.15rem 0.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    /* Position */
+    position: absolute;
+    bottom: 150%;
+    left: -210%;
+    /* Visibility */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltipText::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid;
+    border-color: rgb(100, 100, 100) transparent transparent transparent;
+}
+.copyButton:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+}
