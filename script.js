@@ -7,6 +7,8 @@ const includeSymbolsElement = document.getElementById('includeSymbols')
 const passwordDisplayElement = document.getElementById('passwordDisplay')
 const form = document.getElementById('passwordGeneratorForm')
 
+const copyButtonElement = document.getElementById('copyButton')
+
 /* Event listener for the form submission */
 form.addEventListener('submit', e => {
     e.preventDefault()
@@ -66,3 +68,11 @@ function syncCharAmt(e) {
     charAmtRange.value = value
     charAmtNumber.value = value
 }
+
+/* Adding functionality to copy button */
+copyButtonElement.addEventListener('click', () => {
+    var copyText = document.getElementById("passwordDisplay");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    navigator.clipboard.writeText(copyText.value);
+})
