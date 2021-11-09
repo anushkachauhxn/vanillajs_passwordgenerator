@@ -22,6 +22,17 @@ form.addEventListener('submit', e => {
     passwordDisplayElement.value = password
 });
 
+/* Event listener for the form reset */
+form.addEventListener('reset', e => {
+    e.preventDefault()
+    charAmtRange.value = '10'
+    charAmtNumber.value = '10'
+    includeUpperCaseElement.checked = false
+    includeNumbersElement.checked = false
+    includeSymbolsElement.checked = false
+    passwordDisplayElement.value = ''
+});
+
 /* Arrays of Character Codes */
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
@@ -71,7 +82,7 @@ function syncCharAmt(e) {
 
 /* Adding functionality to copy button */
 copyButtonElement.addEventListener('click', () => {
-    var copyText = document.getElementById("passwordDisplay");
+    var copyText = document.getElementById("passwordDisplay")
     copyText.select();
     copyText.setSelectionRange(0, 99999); /* For mobile devices */
     navigator.clipboard.writeText(copyText.value);
